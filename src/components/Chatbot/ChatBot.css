@@ -172,3 +172,27 @@
   background: rgba(204, 0, 187, 0.3);
   border-radius: 3px;
 }
+
+@media (max-width: 768px) {
+  .chat-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .chat-header {
+    font-size: 1.5em;
+  }
+  .message {
+    font-size: 1em;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-header {
+    font-size: 1.2em;
+  }
+  .message {
+    font-size: 0.9em;
+    padding: 3px;
+  }
+}

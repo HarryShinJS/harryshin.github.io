@@ -53,7 +53,7 @@ function MainPage() {
             <ChatBot />
           </div>
           <Footer />
-          <div style={{
+          {/* <div style={{
             position: 'fixed', 
             top: '20px', 
             right: '20px', 
@@ -72,7 +72,7 @@ function MainPage() {
             >
               Logout
             </button>
-          </div>
+          </div> */}
         </Body>
       </div>
     </ThemeProvider>
