@@ -10,7 +10,7 @@ function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
