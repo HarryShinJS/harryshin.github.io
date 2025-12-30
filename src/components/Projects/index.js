@@ -12,7 +12,7 @@ const Projects = ({openModal,setOpenModal}) => {
       <Wrapper>
         <Title>Projects</Title>
         <Desc>
-          I have worked on a wide range of projects. From web apps to android apps. Here are some of my projects.
+          웹 애플리케이션부터 AI를 활용한 크로스 모바일 앱 개발까지 다양한 프로젝트를 경험했습니다. 아래는 제가 참여한 주요 프로젝트들입니다.
         </Desc>
         <ToggleButtonGroup >
           {toggle === 'all' ?

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 
@@ -22,7 +22,7 @@ const Card = styled.div`
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
-    overflow: hidden;
+    overflow: visible;
     padding: 26px 20px;
     display: flex;
     flex-direction: column;
@@ -111,24 +111,60 @@ const Members = styled.div`
     display: flex;
     align-items: center;
     padding-left: 10px;
+    position: relative;
+    height: 48px;
+    z-index: 2;
+    gap: 10px;
 `
+const AvatarWrapper = styled.div`
+    display: inline-block;
+    position: relative;
+    margin-left: 0;
+`
+
 const Avatar = styled.img`
     width: 38px;
     height: 38px;
-    border-radius: 50%;
-    margin-left: -10px;
+    /* border-radius: 0; // 직사각형 */
     background-color: ${({ theme }) => theme.white};
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border: 3px solid ${({ theme }) => theme.card};
+    cursor: pointer;
+    object-fit: contain; /* cover → contain */
+    transition: box-shadow 0.3s;
+`
+
+const LargeImageOverlay = styled.div`
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+`
+const LargeImage = styled.img`
+    width: 80vw;           // 화면 너비의 80%
+    height: 80vh;          // 화면 높이의 80%
+    max-width: 600px;      // 최대 600px
+    max-height: 90vh;      // 최대 90% 높이
+    min-width: 200px;      // 최소 200px
+    min-height: 200px;     // 최소 200px
+    background: #fff;
+    border: 3px solid ${({ theme }) => theme.card};
+    object-fit: contain;
 `
 
 const ProjectCards = ({project,setOpenModal}) => {
+    const [showIdx, setShowIdx] = useState(null);
+
     return (
+        <>
         <Card onClick={() => setOpenModal({state: true, project: project})}>
             <Image src={project.image}/>
             <Tags>
                 {project.tags?.map((tag, index) => (
-                <Tag>{tag}</Tag>
+                <Tag key={index}>{tag}</Tag>
                 ))}
             </Tags>
             <Details>
@@ -137,13 +173,22 @@ const ProjectCards = ({project,setOpenModal}) => {
                 <Description>{project.description}</Description>
             </Details>
             <Members>
-                {project.member?.map((member) => (
-                    <Avatar src={member.img}/>
+                {project.member?.map((member, idx) => (
+                    <AvatarWrapper key={idx}>
+                        <Avatar src={member.img} onClick={e => {e.stopPropagation(); setShowIdx(idx)}} />
+                    </AvatarWrapper>
                 ))}
             </Members>
             {/* <Button>View Project</Button> */}
         </Card>
+        {showIdx !== null && (
+            <LargeImageOverlay onClick={() => setShowIdx(null)}>
+                <LargeImage src={project.member[showIdx].img} />
+            </LargeImageOverlay>
+        )}
+        </>
     )
 }
+
 
 export default ProjectCards
