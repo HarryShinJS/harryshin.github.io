@@ -1,14 +1,20 @@
 {
   "files": {
     "main.css": "/harryshin.github.io/static/css/main.0ba3bf5d.css",
-    "main.js": "/harryshin.github.io/static/js/main.109f5a83.js",
+    "main.js": "/harryshin.github.io/static/js/main.a2b19591.js",
+    "static/media/mainLogo_1024x1024.png": "/harryshin.github.io/static/media/mainLogo_1024x1024.86e060af00e59b3f772c.png",
+    "static/media/crew.png": "/harryshin.github.io/static/media/crew.163a508bde0311688f9c.png",
+    "static/media/home.png": "/harryshin.github.io/static/media/home.0952a796db962f63721c.png",
+    "static/media/center.png": "/harryshin.github.io/static/media/center.81801724998a3dfbea4c.png",
+    "static/media/community.png": "/harryshin.github.io/static/media/community.20bbc609f44bddc2c0cd.png",
     "static/media/KakaoTalk_Photo_2024-12-13-16-38-47.jpeg": "/harryshin.github.io/static/media/KakaoTalk_Photo_2024-12-13-16-38-47.ac77a9c0ddb8556635c4.jpeg",
+    "static/media/calender.png": "/harryshin.github.io/static/media/calender.d378a8eb8b22b7c656e6.png",
     "index.html": "/harryshin.github.io/index.html",
     "main.0ba3bf5d.css.map": "/harryshin.github.io/static/css/main.0ba3bf5d.css.map",
-    "main.109f5a83.js.map": "/harryshin.github.io/static/js/main.109f5a83.js.map"
+    "main.a2b19591.js.map": "/harryshin.github.io/static/js/main.a2b19591.js.map"
   },
   "entrypoints": [
     "static/css/main.0ba3bf5d.css",
-    "static/js/main.109f5a83.js"
+    "static/js/main.a2b19591.js"
   ]
 }
